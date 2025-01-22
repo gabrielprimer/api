@@ -13,8 +13,8 @@ type Anime struct {
 	Synopsis string `json:"synopsis"`
 }
 
-// Função handler para a rota /api/anime
-func animeHandler(w http.ResponseWriter, r *http.Request) {
+// Função handler exportada para a rota /api/anime
+func AnimeHandler(w http.ResponseWriter, r *http.Request) {  // Mudança aqui: AnimeHandler em vez de animeHandler
 	// Criando um exemplo de anime
 	anime := Anime{
 		Name:     "Naruto",
@@ -31,8 +31,8 @@ func animeHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	// Mapeia a rota /api/anime para a função animeHandler
-	http.HandleFunc("/api/anime", animeHandler)
+	// Mapeia a rota /api/anime para a função AnimeHandler
+	http.HandleFunc("/api/anime", AnimeHandler)
 
 	// Inicia o servidor na porta 8080
 	http.ListenAndServe(":8080", nil)
