@@ -30,7 +30,7 @@ func AnimeHandler(w http.ResponseWriter, r *http.Request) {  // Mudança aqui: A
 	json.NewEncoder(w).Encode(anime)
 }
 
-func main() {
+func Handler() {
 	// Mapeia a rota /api/anime para a função AnimeHandler
 	http.HandleFunc("/api/anime", AnimeHandler)
 
